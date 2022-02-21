@@ -29,7 +29,7 @@ const Flights = (props) => {
 
     return (
         <View style={{ display: 'flex', alignItems: 'center', flex: 1, backgroundColor: 'white' }}>
-            <View style={{ width: '80%', flex: 1 }}>
+            <View style={{ width: '85%', flex: 1 }}>
                 <View style={{ height: 60 }}>
 
                 </View>
@@ -50,16 +50,25 @@ const Flights = (props) => {
                         keyExtractor={item => item._id}
                         renderItem={(item) => {
                             return (
-                                <TouchableOpacity onPress={() => navigateDriverScreen(item.item)} style={{ marginBottom: 10 }}>
+                                <TouchableOpacity style={{ marginBottom: 10 }}>
 
-                                    <View style={{ height: 72, display: 'flex', flexDirection: 'row', alignItems: 'center', paddingLeft: 10, borderWidth: 2, borderColor: 'lightgray', borderRadius: 5 }}>
+                                    <View style={{ height: 92, display: 'flex', flexDirection: 'row', alignItems: 'center', paddingLeft: 10, borderWidth: 2, borderColor: 'lightgray', borderRadius: 5 }}>
                                         <Image resizeMode='contain' source={{ uri: item.item.airline[0]?.logo }} style={{ height: 40, width: 40 }} />
-                                        <View style={{paddingLeft : 15}}>
+                                        <View style={{ padding: 10, width: '85%', display : 'flex' }}>
+                                            
+                                            <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+                                                <Text style={{ fontSize: 20, fontWeight: '700' }}>
+                                                    {item.item.name}
+                                                </Text>
+                                                <View style={{ padding: 10, borderRadius: 25, backgroundColor : 'white', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                                    <Text style={{ color: 'black' }}>
+                                                     Est:{item.item.airline[0]?.established}
+                                                    </Text>
+                                                </View>
+                                            </View>
+
                                             <Text>
-                                                {item.item.name}
-                                            </Text>
-                                            <Text>
-                                                {item.item.airline[0]?.country}
+                                            Country : {item.item.airline[0]?.country}
                                             </Text>
                                         </View>
 

@@ -59,7 +59,7 @@ export const getAllDrivers = (callback) => (dispatch) => {
     const endpoint = `${environment.api_base_url}/drivers`
 
     return http.get(endpoint).then(res => {
-       // console.log(res.data);
+        console.log(res.data);
         dispatch({
             type: GET_ALL_DRIVERS,
             payload: (res.data),
@@ -116,7 +116,7 @@ export const getFlights = (page, callback) => (dispatch) => {
     //console.log(endpoint, 'endpoint');
 
     return http.get(endpoint).then(res => {
-       // console.log(res.data)
+        //console.log(res.data)
         dispatch({
             type: GET_ALL_FLIGHTS,
             payload: (res.data.data),

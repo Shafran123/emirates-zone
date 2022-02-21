@@ -8,6 +8,7 @@ import {
 import Home from "../Screens/Home/Home";
 import Flights from "../Screens/Flights/Flights";
 import Settings from "../Screens/Settings/Settings";
+import NavIcons from "./NavIcons";
 
 
 const DriverStack = createStackNavigator();
@@ -56,15 +57,22 @@ const MainTabNavigator = () => {
     <Tab.Navigator
       initialRouteName="Driver"
       screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let routeName = route.name;
+
+          // You can return any component that you like here!
+          return <NavIcons name={routeName} focused={focused} />;
+        },
         tabBarActiveTintColor: "#2D59CA",
         tabBarInactiveTintColor: "#707070",
         tabBarHideOnKeyboard: true,
         tabBarStyle: { position: "absolute" },
-        tabBarIconStyle: { display: "none" },
+
         tabBarShowLabel: true
       })}
     >
-      <Tab.Screen
+      <Tab.Screen 
+      
         options={{ headerShown: false }}
         name="Driver"
         component={DriverTabs}

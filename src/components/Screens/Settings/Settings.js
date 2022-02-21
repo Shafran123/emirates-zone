@@ -24,7 +24,7 @@ const Flights = (props) => {
 
     return (
         <View style={{ display: 'flex', alignItems: 'center', flex: 1, backgroundColor: 'white' }}>
-            <View style={{ width: '80%', flex: 1 }}>
+            <View style={{ width: '85%', flex: 1 }}>
                 <View style={{ height: 60 }}>
 
                 </View>
@@ -40,11 +40,14 @@ const Flights = (props) => {
 
                 </View>
                 <TouchableOpacity onPress={() => logout()} style={{ backgroundColor: 'red', borderRadius: 5, marginBottom: 40 }}>
-                    <View>
-                        <Text style={{ color: 'white', fontSize: 18, padding: 10 }}>
-                            Logout
-                        </Text>
-                    </View>
+            
+                    <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 52, backgroundColor: 'red', width: '100%', borderRadius: 5 }}>
+                          
+                                        <Text style={{ fontSize: 18, fontWeight: '600', color: 'white' }}>
+                                        Logout
+                                        </Text>
+                     
+                                </View>
                 </TouchableOpacity>
             </View>
         </View >

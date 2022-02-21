@@ -53,9 +53,9 @@ const Home = (props) => {
                     <Text style={{ fontSize: 32, fontWeight: '700' }}>
                         Drivers
                     </Text>
-                    <TouchableOpacity onPress={() => addUser()} style={{ backgroundColor: '#2D59CA', borderRadius: 5 }}>
-                        <Text style={{ fontSize: 18, color: 'white', padding: 10 }}>
-                            Add Driver
+                    <TouchableOpacity onPress={() => addUser()} style={{ backgroundColor: 'white', borderRadius: 5 }}>
+                        <Text style={{ fontSize: 18, color: '#2D59CA' , fontWeight : '600' }}>
+                           +  Add Driver
                         </Text>
                     </TouchableOpacity>
 

@@ -11,6 +11,7 @@ export default function App() {
    <>
        <NativeBaseProvider>
        <Provider store={store}>
+       <StatusBar style="dark" />
           <AppNavigator />
        </Provider>
        </NativeBaseProvider>

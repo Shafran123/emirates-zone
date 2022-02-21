@@ -4,13 +4,16 @@ import { Provider } from 'react-redux';
 import AuthLoading from './src/components/Auth/AuthLoading';
 import AppNavigator from './src/components/Navigaiton/AppNavigator';
 import store from './src/redux/store';
+import { NativeBaseProvider, Box } from "native-base";
 
 export default function App() {
   return (
    <>
+       <NativeBaseProvider>
        <Provider store={store}>
           <AppNavigator />
        </Provider>
+       </NativeBaseProvider>
    </>
   );
 }

@@ -56,7 +56,7 @@ const MainTabNavigator = () => {
     <Tab.Navigator
       initialRouteName="Driver"
       screenOptions={({ route }) => ({
-        tabBarActiveTintColor: "#FA9400",
+        tabBarActiveTintColor: "#2D59CA",
         tabBarInactiveTintColor: "#707070",
         tabBarHideOnKeyboard: true,
         tabBarStyle: { position: "absolute" },

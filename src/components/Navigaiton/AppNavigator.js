@@ -24,7 +24,7 @@ const AppNavigator = () => {
         </RootStack.Group>
         <RootStack.Group>
           <RootStack.Screen options={{headerShown: false}} name="Home" component={MainTabNavigator} />
-          <RootStack.Screen  name="DriverDetails" component={DriverDetails} />
+          <RootStack.Screen  name="DriverDetails" options={{headerShown: false}} component={DriverDetails} />
         </RootStack.Group>
       </RootStack.Navigator>
     </NavigationContainer>

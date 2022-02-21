@@ -28,14 +28,14 @@ export const loginUser = (data, callback) => (dispatch) => {
     const endpoint = `${environment.api_base_url}/login`
 
     return http.post(endpoint, data).then(res => {
-        console.log(res.data);
+        console.log(res.data , 'eeeoeo');
 
         AsyncStorage.setItem("token", res.data.token);
         AsyncStorage.setItem("user", JSON.stringify(res.data.user));
 
         callback(true)
     }).catch(err => {
-        console.log(err);
+        console.log(err , 'eeeoeo');
         callback(false)
     })
 }
@@ -59,7 +59,7 @@ export const getAllDrivers = (callback) => (dispatch) => {
     const endpoint = `${environment.api_base_url}/drivers`
 
     return http.get(endpoint).then(res => {
-        console.log(res.data);
+       // console.log(res.data);
         dispatch({
             type: GET_ALL_DRIVERS,
             payload: (res.data),
@@ -113,10 +113,10 @@ export const deleteDriver = (data, callback) => (dispatch) => {
 export const getFlights = (page, callback) => (dispatch) => {
     const endpoint = `https://api.instantwebtools.net/v1/passenger?page=${page}&size=10`
 
-    console.log(endpoint, 'endpoint');
+    //console.log(endpoint, 'endpoint');
 
     return http.get(endpoint).then(res => {
-        console.log(res.data)
+       // console.log(res.data)
         dispatch({
             type: GET_ALL_FLIGHTS,
             payload: (res.data.data),

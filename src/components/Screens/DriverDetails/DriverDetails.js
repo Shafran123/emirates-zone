@@ -3,6 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, FlatList, KeyboardAvoidingView
 import { connect } from 'react-redux';
 import { logoutUser, getAllDrivers, udpateDriverDetails, deleteDriver, addDriverDetails } from '../../../redux/actions/homeActions';
 import { Picker } from '@react-native-picker/picker';
+import { ArrowBackIcon, CheckIcon, Select } from 'native-base';
 
 const DriverDetails = (props) => {
 
@@ -85,12 +86,22 @@ const DriverDetails = (props) => {
     }
 
     return (
-        <KeyboardAvoidingView style={{flex :1}}>
+        <KeyboardAvoidingView style={{ flex: 1 }}>
             <View style={{ display: 'flex', alignItems: 'center', flex: 1, backgroundColor: 'white' }}>
-                <View style={{ width: '80%' }}>
-                    <View style={{ height: 40 }}>
+                <View style={{ width: '85%' }}>
+                    <View style={{ height: 60 }}>
 
                     </View>
+
+                    <View style={{ paddingBottom: 20 , display : 'flex' , flexDirection :'row' , alignItems: 'center' }}>
+                        <ArrowBackIcon size={6} />
+                        <View>
+                            <Text style={{fontSize : 18 , fontWeight :'600' , paddingLeft: 5}}>Back</Text>
+
+                        </View>
+
+                    </View>
+
                     <View >
 
                         <Text style={{ fontSize: 24, fontWeight: '600' }}>
@@ -122,7 +133,21 @@ const DriverDetails = (props) => {
                             License_type
                         </Text>
 
-                        <Picker
+                        <Select selectedValue={license_type} height="52" fontSize={14} borderColor='gray.500'
+                            style={{ paddingLeft: 15, height: 52, borderWidth: 1, borderColor: 'gray', borderRadius: 5 }}
+                            minWidth="200"
+                            accessibilityLabel="Choose Service"
+                            placeholder="Choose Service" _selectedItem={{
+
+                                style: { color: 'white' },
+                                endIcon: <CheckIcon size="4" />
+                            }} mt={1} onValueChange={itemValue => set_license_type(itemValue)}>
+                            <Select.Item color='white' label="Two Wheeler" value={0} />
+                            <Select.Item label="Four Wheeler" value={1} />
+
+                        </Select>
+
+                        {/* <Picker
                             selectedValue={license_type}
                             ref={pickerRef}
                             mode='dialog'
@@ -134,7 +159,7 @@ const DriverDetails = (props) => {
                             }>
                             <Picker.Item label="Two Wheeler" value={0} />
                             <Picker.Item label="Four Wheeler" value={1} />
-                        </Picker>
+                        </Picker> */}
 
                     </View>
                     <View style={{ height: 10 }}>

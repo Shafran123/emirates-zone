@@ -12,11 +12,11 @@ export default (state = initialState, action) => {
       return { ...state, home: action.payload };
 
     case GET_ALL_DRIVERS:
-      console.log(action.payload);
+      //console.log(action.payload);
       return { ...state, drivers: action.payload };
 
     case GET_ALL_FLIGHTS:
-      console.log(action.payload);
+      //console.log(action.payload);
       action.payload.map(e => {
         state.flights.push(e)
       })

@@ -31,7 +31,7 @@ const Home = (props) => {
         })
     }
 
-  
+
 
     const navigateDriverScreen = (driver) => {
         console.log(driver);
@@ -39,21 +39,21 @@ const Home = (props) => {
     }
 
     const addUser = () => {
-        props.navigation.navigate('DriverDetails' ,{ driver_data: null })
+        props.navigation.navigate('DriverDetails', { driver_data: null })
     }
 
 
     return (
         <View style={{ display: 'flex', alignItems: 'center', flex: 1, backgroundColor: 'white' }}>
-            <View style={{ width: '80%', flex: 1 }}>
-                <View style={{ height: 60 }}>
+            <View style={{ width: '85%', flex: 0.9 }}>
+                <View style={{ height: 60  }}>
 
                 </View>
                 <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
                     <Text style={{ fontSize: 32, fontWeight: '700' }}>
                         Drivers
                     </Text>
-                    <TouchableOpacity onPress={() => addUser()} style={{ backgroundColor: 'green', borderRadius: 5 }}>
+                    <TouchableOpacity onPress={() => addUser()} style={{ backgroundColor: '#2D59CA', borderRadius: 5 }}>
                         <Text style={{ fontSize: 18, color: 'white', padding: 10 }}>
                             Add Driver
                         </Text>
@@ -70,11 +70,31 @@ const Home = (props) => {
                             keyExtractor={item => item.id}
                             renderItem={(item) => {
                                 return (
-                                    <TouchableOpacity onPress={() => navigateDriverScreen(item.item)} style={{marginBottom: 10}}>
-                                        <View style={{ height: 52 , display: 'flex' , justifyContent: 'center', paddingLeft: 10, borderWidth: 2, borderColor : 'lightgray' , borderRadius: 5 }}>
+                                    <TouchableOpacity onPress={() => navigateDriverScreen(item.item)} style={{ marginBottom: 20 }}>
+                                        <View style={{ height: 82, display: 'flex', justifyContent: 'space-between', padding: 10, borderWidth: 2, borderColor: 'lightgray', borderRadius: 5 }}>
+
+                                        <View style={{display : 'flex' , flexDirection: 'row', justifyContent: 'space-between'}}>
+                                                <Text style={{ fontSize: 20, fontWeight: '700' }}>
+                                                    {item.item.name}
+                                                </Text>
+
+                                                <View style={{ width: 100, height: 25, borderRadius: 15, backgroundColor: item.item.license_type == 'Two Wheeler' ?  '#61B8E6' :'#2D59CA' , display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                                    <Text style={{ color: 'white' }}>
+                                                        {item.item.license_type}
+                                                    </Text>
+                                                </View>
+                                        </View>
+
+                                        <View>
                                             <Text>
-                                                {item.item.id} : {item.item.name}
+                                                Age : {item.item.age}
                                             </Text>
+
+                                            <Text>
+                                                License exp : {item.item.license_expiry}
+                                            </Text>
+                                        </View>
+
                                         </View>
                                     </TouchableOpacity>
                                 );
